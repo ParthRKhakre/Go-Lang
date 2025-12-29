@@ -8,6 +8,9 @@ func main() {
 	// unsigned integer : uint,uint8(byte),uint16,uint32,uint64
 	fmt.Println(10)
 
+	// rune is a single character for UNICODE similar to char 
+	// byte for raw ASCII data
+
 	// string - sequence of characters
 	fmt.Println("Hello")
 

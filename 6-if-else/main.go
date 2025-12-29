@@ -7,7 +7,7 @@ func main() {
 
 	age := 13
 
-	// control statement : if-else
+	// control statement : if-else used to make decisions based on conditions.
 	if age > 18 {
 		fmt.Print("person is an adult")
 	}else if age >= 12 {
