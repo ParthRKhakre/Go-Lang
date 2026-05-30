@@ -46,4 +46,13 @@ func main(){
 	y[0] = 10
 	fmt.Println(y)
 
+	// copy()
+	var a = make([]int,3)
+	a = append(a, 10)
+	var b = make([]int,len(a))
+	fmt.Println(a,b)
+
+
+
+
 }
