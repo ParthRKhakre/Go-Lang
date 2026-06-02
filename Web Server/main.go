@@ -20,16 +20,32 @@ func helloHandler(w http.ResponseWriter,r *http.Request){
 	fmt.Fprintf(w,"Hello!")
 }
 
-func formHandler(w http.ResponseWriter,r *http.Request){
-	if err := r.ParseForm(); err != nil{
-		fmt.Fprintf(w,"ParseForm() err: %v",err)
+func formHandler(w http.ResponseWriter, r *http.Request) {
+
+	if r.Method == "GET" {
+		http.ServeFile(w, r, "./static/form.html")
 		return
 	}
-	fmt.Fprint(w,"POST request successful")
-	name := r.FormValue("name")
-	address := r.FormValue("address")
-	fmt.Fprintf(w,"Name = %s\n",name)
-	fmt.Fprintf(w,"address = %s\n",address)
+
+	if r.Method == "POST" {
+
+		if err := r.ParseForm(); err != nil {
+			fmt.Fprintf(w, "ParseForm() err: %v", err)
+			return
+		}
+
+		fmt.Fprintln(w, "POST request successful")
+
+		name := r.FormValue("name")
+		address := r.FormValue("address")
+
+		fmt.Fprintf(w, "Name = %s\n", name)
+		fmt.Fprintf(w, "Address = %s\n", address)
+
+		return
+	}
+
+	http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
 }
 
 func main(){
