@@ -36,7 +36,10 @@ func main() {
 
 	// 3.type switch
 
-	whoAmI := func(i interface{}){
+	whoAmI := func(i interface{}){ 														/*
+function is first class citizen in Go 
+name function cannot be written inside the main function 
+hence we use the above notation known as anonymous function.							*/
 		switch t := i.(type){
 		case int:
 			fmt.Println("its an integer")

@@ -17,11 +17,16 @@ func main() {
 	age := 20
 	fmt.Println(age)
 
+// we cannot use the shorthand if we just want to declare the variable and not assign any value to it	
 	var price float32 
 	price = 99.23
 	fmt.Println(price)
+																																			/*
 
-// := can be used inside the main function using it outside is not valid
-// In Go, if you declare a variable outside of any function, it becomes package-level (global) variable.
+:= can be used inside the main function using it outside is not valid
+In Go, if you declare a variable outside of any function, it becomes package-level (global) variable.
+
+Inorder to check the type of data stored inside the variable we use 
+fmt.Printf("%T",variable_name) 																												*/
 
 }
